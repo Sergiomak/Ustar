@@ -66,7 +66,9 @@
 
 			woocommerce_product_loop_end();
 
-			global $wp_query;
+/* custom code for additional product block from here */
+			
+				global $wp_query;
 			$globalTaxQuery = $wp_query->query_vars['tax_query'];
 			$isFilterUse = count($globalTaxQuery) > 2;
 			$productIds = array_map(function ($product)
@@ -316,6 +318,9 @@
 					wp_reset_postdata();
 				}
 			}
+			
+			
+/* end of the custom code for additional product block */	
 			
 			/**
 			 * Hook: woocommerce_after_shop_loop.
